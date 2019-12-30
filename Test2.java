@@ -1,29 +1,24 @@
-class Employee 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+
+public class Test2
 {
-  private int empid;
-  private String ename;
-  double salary;
-  public Employee(){}
-  public Employee(int empid,String ename,double salary)
-    {
-      this.empid=empid;
-      this.salary=salary;
-      this.ename=ename;
-     }
-   public String toString()
+public static void main(String[] args)
 {
-return "Empid is "+empid+"\n Ename is "+ename+"\nSalary is "+salary;
+   Student s = null;
+   try(FileInputStream fis=new FileInputStream("std.dat");
+    ObjectInputStream ois=new ObjectInputStream(fis);)
+{
+     s=(Student)ois.readObject();
+    System.out.println(s.getSsn()+"  "+s.getAge()+"  "+s.getPname()+"  "+s.getRno()+"  "+s.getM1()+"  "+s.getM2()+"  "+s.getM3());
+}
+catch(IOException | ClassNotFoundException ex)
+{
+System.out.println(ex);
 }
 }
-class Test2
-{
-  public static void main(String[] args)
-   {
-    Employee e = new Employee(101,"arun",25500);
-    System.out.println(e);
 
 }
-}
- 
 
-  
