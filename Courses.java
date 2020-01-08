@@ -1,21 +1,31 @@
-package com.del.test.entity;
+package com.deloitte.thirdmvn.hibthird.entity;
 
-public class Courses 
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+
+@Entity
+public class Courses
 {
-    int cid;
-    String cname;
-    int cd;
-    double cfee;
+	@Id
+	int cid;
+	String cname;
+	int duration;
+	@ManyToMany
+	@JoinTable(name="student_course_reg",joinColumns={@JoinColumn(name="cid")},inverseJoinColumns= {@JoinColumn(name="sid")})
+	List<Student> slist;
 	public Courses() {}
-	public Courses(int cid, String cname, int cd, double cfee) 
+	public Courses(int cid, String cname, int duration) 
 	{
 		
 		this.cid = cid;
 		this.cname = cname;
-		this.cd = cd;
-		this.cfee = cfee;
+		this.duration = duration;
 	}
-
 	public int getCid() {
 		return cid;
 	}
@@ -28,20 +38,20 @@ public class Courses
 	public void setCname(String cname) {
 		this.cname = cname;
 	}
-	public int getCd() {
-		return cd;
+	public int getDuration() {
+		return duration;
 	}
-	public void setCd(int cd) {
-		this.cd = cd;
+	public void setDuration(int duration) {
+		this.duration = duration;
 	}
-	public double getCfee() {
-		return cfee;
+	public List<Student> getSlist() {
+		return slist;
 	}
-	public void setCfee(double cfee) {
-		this.cfee = cfee;
+	public void setSlist(List<Student> slist) {
+		this.slist = slist;
 	}
-	
 		
-	}
-    
+	
+	
 
+}

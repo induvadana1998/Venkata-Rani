@@ -1,54 +1,55 @@
+package com.deloitte.thirdmvn.hibthird.entity;
 
-public class Student extends Person 
-{  
-  
-	int rno;
-	int m1,m2,m3;
-	Person p;
+import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
+@Entity
+public class Student 
+{
+	@Id
+	int sid;
+	String sname;
+	String address;
+	@ManyToMany(mappedBy="slist")
+	List<Courses> clist;
 	public Student() {}
-
-	public Student(int ssn,int age,String pname,int rno, int m1, int m2, int m3) 
+	public Student(int sid, String sname, String address)
 	{
-	super(ssn,age,pname);
-		this.rno = rno;
-		this.m1 = m1;
-		this.m2 = m2;
-		this.m3 = m3;
+		;
+		this.sid = sid;
+		this.sname = sname;
+		this.address = address;
 	}
-
-	public int getRno() {
-		return rno;
+	public int getSid() {
+		return sid;
 	}
-
-	public void setRno(int rno) {
-		this.rno = rno;
+	public void setSid(int sid) {
+		this.sid = sid;
 	}
-
-	public int getM1() {
-		return m1;
+	public String getSname() {
+		return sname;
 	}
-
-	public void setM1(int m1) {
-		this.m1 = m1;
+	public void setSname(String sname) {
+		this.sname = sname;
 	}
-
-	public int getM2() {
-		return m2;
+	public String getAddress() {
+		return address;
 	}
-
-	public void setM2(int m2) {
-		this.m2 = m2;
+	public void setAddress(String address) {
+		this.address = address;
 	}
-
-	public int getM3() {
-		return m3;
+	public List<Courses> getClist() {
+		return clist;
 	}
-
-	public void setM3(int m3) {
-		this.m3 = m3;
+	public void setClist(List<Courses> clist) {
+		this.clist = clist;
 	}
-		
-	}
+	
+	
+	
+	
 
-
+}

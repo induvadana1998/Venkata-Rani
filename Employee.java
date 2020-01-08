@@ -1,21 +1,28 @@
-package com.del.second.entity;
+package com.deloitte.thirdmvn.hibthird.entity;
 
-import java.sql.Date;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Employee 
 {
-      int empid;
-      String ename;
-      double salary;
-      Date doj;
+	@Id
+	int empid;
+	String ename;
+	double salary;
+	@ManyToOne
+	@JoinColumn(name="deptno")
+	Department dept;
 	
-      public Employee() {}
-	public Employee(int empid, String ename, double salary, Date doj)
+	public Employee() {}
+	public Employee(int empid, String ename, double salary)
 	{
-		
+	
 		this.empid = empid;
 		this.ename = ename;
 		this.salary = salary;
-		this.doj = doj;
 	}
 	public int getEmpid() {
 		return empid;
@@ -35,11 +42,13 @@ public class Employee
 	public void setSalary(double salary) {
 		this.salary = salary;
 	}
-	public Date getDoj() {
-		return doj;
+	public Department getDept() {
+		return dept;
 	}
-	public void setDoj(Date doj) {
-		this.doj = doj;
+	public void setDept(Department dept) {
+		this.dept = dept;
 	}
+		
 	
+
 }

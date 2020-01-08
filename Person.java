@@ -1,21 +1,34 @@
- 
-public class Person implements java.io.Serializable
-{
-	 int ssn,age;
-	  String pname;
-	   public Person() {}
-	   public Person(int ssn, int age, String pname) 
-	{
+package com.deloitte.thirdmvn.hibthird.entity;
 
-		this.ssn = ssn;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+@Entity
+public class Person 
+{
+	@Id
+	String name;
+	int age;
+	String address;
+	@OneToOne
+	@JoinColumn(name="aid")
+	AadharCard acard;
+	public Person() {}
+	public Person(String name, int age, String address, AadharCard acard) 
+	{
+	
+		this.name = name;
 		this.age = age;
-		this.pname = pname;
+		this.address = address;
+		this.acard = acard;
 	}
-	public int getSsn() {
-		return ssn;
+	public String getName() {
+		return name;
 	}
-	public void setSsn(int ssn) {
-		this.ssn = ssn;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public int getAge() {
 		return age;
@@ -23,11 +36,20 @@ public class Person implements java.io.Serializable
 	public void setAge(int age) {
 		this.age = age;
 	}
-	public String getPname() {
-		return pname;
+	public String getAddress() {
+		return address;
 	}
-	public void setPname(String pname) {
-		this.pname = pname;
-	}  
-		}
+	public void setAdress(String address) {
+		this.address = address;
+	}
+	public AadharCard getAcard() {
+		return acard;
+	}
+	public void setAcard(AadharCard acard) {
+		this.acard = acard;
+	}
+		
+	
+	
 
+}
