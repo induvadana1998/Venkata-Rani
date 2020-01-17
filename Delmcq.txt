@@ -1,0 +1,39 @@
+                              
+what is the difference between BVT and Defects Life Cycle
+What is the test process and test design
+what is the differencc between HTTP/SOAP/REST
+what Kind of tool is selenium in terms of Web based application
+what is the Load Runner suite and selenium suite
+Can selenium scripts be embedded in Load Runner - justify
+
+Requirement to automate a web based application for the currency validation
+
+1.The User has to validate the currency conversion keeping the base currency in INR as country Name India and display the currency for the various transactions in the opencart and validate the base curreny with populated in the open cart application
+
+2.The input has to be taken for the user for the base currency and checked against the tranaction curreny with valiation on the web based objects
+Count the number of links in the drop down box of the currency
+
+3.capture the validation message for the invalid curreny using the java script alert box or text message
+
+                                         
+                                            ANSWERS
+
+
+
+BTV is the set of tests that run to verify that the build is testable before released to test team for testing.
+
+
+A defect life cycle goes through different states in its entire life cycle.It starts when defect is detected by the teser and ends when tester closes the defect so that it wont be created again.
+
+Test design is a process that describes how the  testing should be done. 
+
+
+
+SOAP is a protocol whereas REST is an architectural pattern.Communication between client computers and web servers is done by sending HTTP Requests and receiving HTTP Responses.
+
+
+Selenium is an open source tool used for the automatinon of the tests to be carried out on web browsers which are the web application.
+
+Load Runner is automation load testing tool which allows you to test application before,durinhg and after deployment.Selenium is not just a single tool but a suite of software, each with a different approach to support automation testing.
+
+Yes.
